@@ -4,7 +4,7 @@
 <p>Projek Akhir PWL : Presensiku</p>
 <br>
 <h2>Cara Penggunaan :</h2>
-<h3>Inisiasi awal :</h3>
+<h3>Inisiasi awal (JIKA INGIN MENJALANKAN SECARA LOCAL) :</h3>
 <ol> 
     <li>Clone repo ini terlebih dahulu</li>
     <li>install composer di local</li>
