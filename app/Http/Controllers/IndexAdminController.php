@@ -26,13 +26,13 @@ class IndexAdminController extends Controller
                                     ->where('users.id_company',Auth::user()->id_company)
                                     ->whereRaw('date(absents.time_in) = CURRENT_DATE()')
                                     ->count();
-        $hitungKaryawanCuti = Izin::selectRaw('izins.id_user,COUNT(*) as total')
+        $hitungKaryawanCuti = Izin::selectRaw('izins.id_user')
                                     ->join('users','users.id','=','izins.id_user')
-                                    ->where('status','Setuju')
                                     ->where('users.id_company',Auth::user()->id_company)
-                                    ->whereRaw('date(izins.mulai) = CURRENT_DATE()')
+                                    ->where('status','Setuju')
+                                    ->whereRaw('CURRENT_DATE() <=date(izins.mulai) ')
                                     ->groupBy('izins.id_user')
-                                    ->count();
+                                    ->get();
         $hitungPermintaanCuti = Izin::selectRaw('izins.id_user,COUNT(*) as total')
                                     ->join('users','users.id','=','izins.id_user')
                                     ->where('users.id_company',Auth::user()->id_company)

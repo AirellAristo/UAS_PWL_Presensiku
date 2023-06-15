@@ -104,9 +104,8 @@ class KaryawanController extends Controller
         return view('admin.karyawan.viewPermintaanCuti',compact('data','no'));
     }
 
-    public function updateStatusCuti(Request $request,$id_karyawan,$id_izin)
+    public function updateStatusCuti(Request $request,$id_izin,$id_karyawan)
     {
-        // dd($request->input('status'),$id_karyawan);
         $status = $request->input('status');
         if(Izin::where('id_user',$id_karyawan)->where('id',$id_izin)->update(['status' => $status])){
             return redirect('/karyawan/cuti')->with('success','Berhasil Mengganti Status Cuti Menjadi '.$status);

@@ -48,10 +48,9 @@
                                             <td>
                                                 {{-- <a href="{{ url('/karyawan/cuti/setuju/'.$item->id) }}"class="btn btn-xs btn-success">Setuju</a>
                                                 <a href="{{ url('/karyawan/cuti/tolak/'.$item->id) }}"class="btn btn-xs btn-danger">Tolak</a> --}}
-                                                <form action="{{ url('/karyawan/update/cuti/'.$item->id) }}" method="post">
+                                                <form action="{{ url('/karyawan/update/cuti/'.$item->id_izin.'/'.$item->id) }}" method="post">
                                                     @csrf
                                                     @method('put')
-                                                    {{ dd($item->id_izin) }}
                                                     <button class="btn btn-xs btn-success" type="submit" value="Setuju" name="status">Setuju</button>
                                                     <button class="btn btn-xs btn-danger" type="submit" value="Tolak" name="status">Tolak</button>
                                                 </form>

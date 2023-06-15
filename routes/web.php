@@ -93,11 +93,12 @@ Route::middleware(['loginAs'])->group(function () {
     Route::get('karyawan/info/{id}/kehadiran',[KaryawanController::class,'viewKaryawanKehadiran']);
     Route::get('karyawan/info/{id}/cuti',[KaryawanController::class,'viewKaryawanCuti']);
     Route::get('/karyawan/info/{id}/alpha',[KaryawanController::class,'viewKaryawanAlpha']);
+
     // End karyawan
 
     // Permintaan Cuti
     Route::get('/karyawan/cuti',[KaryawanController::class,'viewPermintaanCuti']);
-    Route::put('/karyawan/update/cuti/{id}',[KaryawanController::class,'updateStatusCuti']);
+    Route::put('/karyawan/update/cuti/{id_izin}/{id_user}',[KaryawanController::class,'updateStatusCuti']);
 });
 
 // employee
